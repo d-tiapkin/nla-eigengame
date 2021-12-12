@@ -1,5 +1,6 @@
 import jax.numpy as jnp
 
+
 def _SVD_U_Sigma(X, V):
     '''
         params:
@@ -7,7 +8,7 @@ def _SVD_U_Sigma(X, V):
             V - approximation of V-matrix from SVD
         output: matrix U and sigular values Sigma
     '''
-    M = jnp.dot(X, V)
+    M = jnp.dot(X, V.T)
     Sigma = jnp.linalg.norm(M, axis=0)
     return M / Sigma, Sigma
 
